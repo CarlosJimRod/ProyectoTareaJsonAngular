@@ -1,1 +1,9 @@
-<p>tutorial-details works!</p>
+<div class="container" *ngIf="numTarea">
+  <p>Titulo</p>
+  <input type="text" [(ngModel)]="tarea.texto">
+  <p>Fecha</p>
+  <input type="text" [(ngModel)]="tarea.fecha">
+  <p><b>Status:</b>Published</p>
+  <button class="btn btn-danger" (click)="delete()" [routerLink]="['/tareas']">Delete</button>
+  <button class="btn btn-success" (click)="update()" [routerLink]="['/tareas']">Update</button>
+</div>

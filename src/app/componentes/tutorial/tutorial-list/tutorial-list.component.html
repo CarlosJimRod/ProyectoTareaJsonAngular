@@ -1,6 +1,20 @@
 <div class="container">
-  <h1>LISTADO DE TAREAS</h1>
-  <table>
-
-  </table>
+  <div class="row">
+    <div class="col">
+      <h1>LISTADO DE TAREAS</h1>
+      <div *ngIf="tareas$ |async as tareas">
+        <table class="table table-hover">
+          <tbody>
+          <tr *ngFor="let tarea of tareas">
+            <td>{{tarea.texto}}</td>
+            <td><input type="button" value="Detail" (click)="tareaDetail(tarea)"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <app-tutorial-list-detail [tarea]="tareaSelected"></app-tutorial-list-detail>
+    </div>
+  </div>
 </div>

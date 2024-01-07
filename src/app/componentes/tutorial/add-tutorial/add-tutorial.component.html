@@ -1,1 +1,7 @@
-<p>add-tutorial works!</p>
+<div class="container">
+  <p>Titulo</p>
+  <input type="text" [(ngModel)]="titulo">
+  <p>Fecha</p>
+  <p><input type="text" [(ngModel)]="fecha"></p>
+  <button class="btn btn-success" (click)="submit()" [routerLink]="['/tareas']">Submit</button>
+</div>

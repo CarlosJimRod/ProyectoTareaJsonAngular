@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {Tarea} from "../models/tarea";
 
 const baseUrl ="http://localhost:5000/tareas"
@@ -20,10 +20,12 @@ export class TutorialService {
   }
 
   deleteTarea(id:number){
-
+    let url = `${baseUrl}/${id}`
+    this.httpClient.delete(url)
   }
 
-  modifyTarea(tarea:Tarea){
-
+  modifyTarea(id: number, tarea: Tarea) {
+    let url = `${baseUrl}/${id}`
+    this.httpClient.put(url, tarea)
   }
 }

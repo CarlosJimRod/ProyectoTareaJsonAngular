@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="tarea ; else vacio">
+    <h1>Tarea</h1>
+    <p><b>Titulo: </b>{{tarea.texto}}</p>
+    <p><b>Fecha: </b>{{tarea.fecha}}</p>
+    <p><b>Estado: </b>Published</p>
+    <button class="btn btn-warning" [routerLink]="['/tareas',tarea.id]">Editar</button>
+  </div>
+  <ng-template #vacio>Selecciona una tarea...</ng-template>
+</div>
